@@ -3,6 +3,14 @@
     <div style="left: 537px;">
       <searchBar></searchBar>
     </div>
+    <div>
+      <span>今日推荐</span>
+      <!-- <v-card style="left: 146px;width: 390px;height: 549px;">
+        <v-img :src="require('../assets/shiming.png')">
+        </v-img>
+      </v-card> -->
+      {{recommendGift}}
+    </div>
   </div>
 </template>
 
@@ -10,9 +18,26 @@
 import SearchBar from './SearchBar'
 export default {
   name: 'Export',
+  data () {
+    return {
+      recommendGift: [],
+    }
+  },
   components: {
     "searchBar": SearchBar
   },
+  created () {
+    this.$axios({
+      method: "get",
+      url: "http://fooxking.net:9000/search/QAQ",
+    })
+      .then((res) => {
+        this.recommendGift = res.data;
+      })
+      .catch((error) => {
+        console.log("失败了！");
+      });
+  }
 }
 </script>
 
