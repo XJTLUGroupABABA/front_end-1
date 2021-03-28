@@ -1,7 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
 
 <template>
-    <h1>可爱的登录界面</h1>
   <div class="container">
     <div class="background"></div>
     <div class="contain">
