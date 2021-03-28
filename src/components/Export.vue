@@ -11,7 +11,8 @@
       </v-card> -->
       {{recommendGift}}
     </div>
-     <v-carousel
+    <v-app>
+      <v-carousel
     cycle
     height="400"
     hide-delimiter-background
@@ -37,6 +38,8 @@
       </v-sheet>
     </v-carousel-item>
   </v-carousel>
+    </v-app>
+     
   </div>
 </template>
 
@@ -71,7 +74,7 @@ export default {
         ],
       }
     },
-    
+
   created () {
     this.$axios({
       method: "get",
