@@ -1,26 +1,20 @@
 <template>
   <div class="background">
-    <!-- <div id="cover">
-      <div class="tb">
-        <div class="td"><input type="text" v-model="keyOfGift" placeholder="Search for gift..." required></div>
-        <div class="td" id="s-cover">
-          <button type="submit" @click="submit">
-            <div id="s-circle"></div>
-            <span></span>
-          </button>
+    <searchBar style="padding-top:40px;"></searchBar>
+
+    <div class="word">
+      gifter found the following gifts for you~
+    </div>
+    <div style="display:flex;margin-left:65px;margin-right:65px">
+      <v-card class="good_intro" v-for="(item, index) in relatedGift" :key="index">
+
+        <v-img style="height:260px;width:260px;  align-items: center;" :src="item.gift_img"> </v-img>
+        <div style="  font-size: 14px; color: black;font-family: Roboto;margin:10px;">
+          {{item.gift_name}}
         </div>
-      </div>
-    </div> -->
-    <searchBar></searchBar>
-    <div class="result">
-      <div>
-        搜索结果
-      </div>
-      <v-card style="background-color: pink;" v-for="(item, index) in relatedGift" :key="index">
-        {{item.gift_id}}
-        {{item.gift_name}}
-        {{item.gift_img}}
-        {{item}}
+        <span v-for="(tag, index) in item.gift_tag">
+          <v-chip>{{tag}}</v-chip>
+        </span>
       </v-card>
     </div>
   </div>
@@ -41,19 +35,6 @@ export default {
     "searchBar": SearchBar
   },
   methods: {
-    // submit () {
-    //   this.$axios({
-    //     method: "get",
-    //     url: "http://fooxking.net:9000/search/" + this.keyOfGift,
-    //   })
-    //     .then((res) => {
-    //       this.relatedGift = res.data;
-    //       console.log("啊啊啊啊成功");
-    //     })
-    //     .catch((error) => {
-    //       console.log("失败了！");
-    //     });
-    // },
   },
   created () {
     this.$axios({
@@ -62,13 +43,35 @@ export default {
     })
       .then((res) => {
         this.relatedGift = res.data;
+        console.log(res);
       })
       .catch((error) => {
-        console.log("失败了！");
+        alert("没有找到任何礼物！");
       });
   }
 }
 </script>
 
 <style scoped>
+.background {
+  background-color: pink;
+  background-size: cover;
+  height: 1200px;
+}
+.word {
+  font-size: 30px;
+  color: aliceblue;
+  font-family: Helvetica-regular;
+  margin-left: 92px;
+  margin-bottom: 10px;
+}
+.good_intro {
+  background-color: white;
+  height: 400px;
+  width: 275px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 100);
+}
 </style>

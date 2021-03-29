@@ -5,8 +5,7 @@
         <router-link to="/" exact>HOME</router-link>
         <router-link to="/contact" exact>CONTACT</router-link>
         <router-link to="/personal" exact> PERSONAL </router-link>
-        <router-link to="/Register" exact> REGISTER </router-link>
-        <router-link to="/Login" exact> LOGIN </router-link>
+        <router-link to="/Register" exact> LOGIN </router-link>
         <img src="../assets/lingdang.png" />
       </li>
     </ul>

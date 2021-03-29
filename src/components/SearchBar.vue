@@ -3,7 +3,7 @@
     <div id="cover">
       <div class="tb">
         <div class="td">
-          <input type="text" v-model="keyOfGift" placeholder="Search for gift..." required>
+          <input @keyup.enter.native="submit" type="text" v-model="keyOfGift" placeholder="Search for gift..." required>
         </div>
         <div class="td" id="s-cover">
           <router-link v-bind:to="{ path:'Search', query: { keyOfGift}}">
@@ -14,13 +14,6 @@
           </router-link>
         </div>
       </div>
-    </div>
-    <div class="autocomplete">
-      <v-card class="RelatedReasult" v-if="showRelatedReasult" v-for="(item, index) in relatedGift">
-        <v-card-text @click="enterRelatedReasult(item.gift_name)">
-          {{item.gift_name}}
-        </v-card-text>
-      </v-card>
     </div>
   </div>
 </template>
@@ -110,14 +103,14 @@ button {
 }
 
 #cover {
-  position: absolute;
+  position: static;
   top: 140px;
   left: 0;
   right: 0;
   width: 604px;
   height: 130px;
   padding: 15px;
-  margin: -83px auto 0 auto;
+  margin: 0 auto 0 auto;
   background-color: #ff7575;
   border-radius: 20px;
   box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;

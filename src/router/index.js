@@ -6,7 +6,6 @@ import page_personal from '../components/page_personal.vue'
 import SearchBar from '../components/SearchBar.vue'
 import slideshow from '../components/slideshow.vue'
 import Search from '../components/Search.vue';
-import Export from '../components/Export.vue';
 import Register from '../components/Register.vue';
 import login from '../components/login.vue';
 Vue.use(VueRouter)
@@ -55,6 +54,7 @@ const routes = [{
     name: 'login',
     component: login,
   },
+
 ]
 const router = new VueRouter({
   mode: 'history',
