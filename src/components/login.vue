@@ -38,11 +38,11 @@
 
 <style scoped>
 .container {
-  height: 900px;
-  width: 100%;
+  height: 100%;
+  width:100%;
 }
 .background {
-  background: url("../assets/gift.jpg") no-repeat center;
+  /* background: url("../assets/gift.jpg") no-repeat center;
   float: left;
   width: 100%;
   height: 900px;
@@ -54,13 +54,27 @@
   -ms-filter: blur(5px) !important;
   filter: blur(4px) !important;
   text-align: center;
+  margin-right:10px; */
+  background: url("../assets/gift.jpg") no-repeat center;
+  height:900px;
+  width:110%;
+  position: absolute;
+  margin-left:-200px;
+  margin-top:-15px;
+  -webkit-filter: blur(5px) !important;
+  -moz-filter: blur(5px) !important;
+  -o-filter: blur(5px) !important;
+  -ms-filter: blur(5px) !important;
+  filter: blur(4px) !important;
+  
+
 }
 .contain {
   position: absolute;
   width: 500px;
   height: 500px;
   margin-top: 200px;
-  margin-left: 500px;
+  margin-left: 400px;
   /* background-color: royalblue; */
   z-index: 5;
 }

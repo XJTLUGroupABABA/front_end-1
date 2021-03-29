@@ -12,7 +12,7 @@
           v-model.trim="name"
           placeholder="Please enter your user name"
           onKeyUp="value=value.replace(/[\W]/g,'')"
-          maxlength="10"
+          maxlength="20"
         /><br />
       </div>
       <div class="passWord">
@@ -21,7 +21,7 @@
           v-model.trim="password"
           placeholder="Please enter your password"
           onkeyup="this.value=this.value.replace(/[^\w]/g,'')"
-          maxlength="20"
+          maxlength="10"
         />
         <img
           :src="seen ? openeye : nopeneye"
@@ -36,7 +36,7 @@
           v-model.trim="passwordAgain"
           placeholder="Please enter the password again"
           onkeyup="this.value=this.value.replace(/[^\w]/g,'')"
-          maxlength="20"
+          maxlength="10"
         />
         <img
           :src="seen1 ? openeye : nopeneye"
@@ -60,11 +60,12 @@
 
 <style scoped>
 .container {
-  height: 900px;
+  height: 100%;
   width: 100%;
 }
+
 .background {
-  background: url("../assets/gift.jpg") no-repeat center;
+  /* background: url("../assets/gift.jpg") no-repeat center;
   float: left;
   width: 100%;
   height: 900px;
@@ -76,14 +77,25 @@
   -ms-filter: blur(5px) !important;
   filter: blur(4px) !important;
   text-align: center;
+  margin-right:10px; */
+  background: url("../assets/gift.jpg") no-repeat center;
+  height: 900px;
+  width: 110%;
+  position: absolute;
+  margin-left: -200px;
+  margin-top: -15px;
+  -webkit-filter: blur(5px) !important;
+  -moz-filter: blur(5px) !important;
+  -o-filter: blur(5px) !important;
+  -ms-filter: blur(5px) !important;
+  filter: blur(4px) !important;
 }
 .contain {
   position: absolute;
   width: 500px;
   height: 500px;
   margin-top: 200px;
-  margin-left: 500px;
-  /* background-color: royalblue; */
+  margin-left: 400px;
   z-index: 5;
 }
 .title {
@@ -184,9 +196,8 @@ export default {
       } else if (this.phone.length !== 11) {
         alert("Please enter your phone number within 11 digits"); //手机号必须为11位
       } else if (this.passwordAgain !== this.password) {
-        alert("Please keep the same password");  //两次密码保持一致
-      }
-      else {
+        alert("Please keep the same password"); //两次密码保持一致
+      } else {
         //将新用户信息存储到localStorage
         localStorage.setItem("name", this.name);
         localStorage.setItem("password", this.password);
