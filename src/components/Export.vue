@@ -4,12 +4,9 @@
       <searchBar></searchBar>
     </div>
     <div>
-      <span>今日推荐</span>
-      <!-- <v-card style="left: 146px;width: 390px;height: 549px;">
         <v-img :src="require('../assets/shiming.png')">
-        </v-img>
-      </v-card> -->
-      {{recommendGift}}
+      <span style="font-size:40px; color:rgba(255, 255, 255, 0.9);">今日推荐</span>
+      <!-- {{recommendGift}} -->
     </div>
   </div>
 </template>
@@ -29,7 +26,7 @@ export default {
   created () {
     this.$axios({
       method: "get",
-      url: "http://fooxking.net:9000/search/QAQ",
+      url: "http://fooxking.net:9000/search/泰迪熊",
     })
       .then((res) => {
         this.recommendGift = res.data;
