@@ -3,15 +3,18 @@
     <searchBar style="padding-top:40px;"></searchBar>
 
     <div class="word">
-      搜索结果
+      gifter found the following gifts for you~
     </div>
-    <div style="display:flex">
+    <div style="display:flex;margin-left:65px;margin-right:65px">
       <v-card class="good_intro" v-for="(item, index) in relatedGift" :key="index">
 
-        <v-img style="height:400px;width:400px;  align-items: center;" :src="item.gift_img"> </v-img>
-        <div style="  font-size: 20px;color: black;font-family: Helvetica-regular;margin:10px;">
+        <v-img style="height:260px;width:260px;  align-items: center;" :src="item.gift_img"> </v-img>
+        <div style="  font-size: 14px; color: black;font-family: Roboto;margin:10px;">
           {{item.gift_name}}
         </div>
+        <span v-for="(tag, index) in item.gift_tag">
+          <v-chip>{{tag}}</v-chip>
+        </span>
       </v-card>
     </div>
   </div>
@@ -43,7 +46,7 @@ export default {
         console.log(res);
       })
       .catch((error) => {
-        console.log("失败了！");
+        alert("没有找到任何礼物！");
       });
   }
 }
@@ -53,19 +56,21 @@ export default {
 .background {
   background-color: pink;
   background-size: cover;
-  height: 100%;
+  height: 1200px;
 }
 .word {
-  font-size: 40px;
+  font-size: 30px;
   color: aliceblue;
   font-family: Helvetica-regular;
   margin: 20px;
 }
 .good_intro {
   background-color: white;
-  height: 500px;
-  width: 500px;
-  margin-left: 20px;
-  margin-right: 20px;
+  height: 400px;
+  width: 275px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 100);
 }
 </style>
