@@ -5,7 +5,6 @@
     </div>
     <div>
       <span style="font-size:40px; color:rgba(255, 255, 255, 0.9);">今日推荐</span>
-      <!-- {{recommendGift}} -->
     </div>
   </div>
 </template>
