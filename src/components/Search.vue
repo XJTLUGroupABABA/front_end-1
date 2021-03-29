@@ -62,7 +62,8 @@ export default {
   font-size: 30px;
   color: aliceblue;
   font-family: Helvetica-regular;
-  margin: 20px;
+  margin-left: 92px;
+  margin-bottom: 10px;
 }
 .good_intro {
   background-color: white;
