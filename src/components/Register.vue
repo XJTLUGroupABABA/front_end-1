@@ -12,7 +12,7 @@
           v-model.trim="name"
           placeholder="Please enter your user name"
           onKeyUp="value=value.replace(/[\W]/g,'')"
-          maxlength="10"
+          maxlength="20"
         /><br />
       </div>
       <div class="passWord">
@@ -21,7 +21,7 @@
           v-model.trim="password"
           placeholder="Please enter your password"
           onkeyup="this.value=this.value.replace(/[^\w]/g,'')"
-          maxlength="20"
+          maxlength="10"
         />
         <img
           :src="seen ? openeye : nopeneye"
@@ -36,7 +36,7 @@
           v-model.trim="passwordAgain"
           placeholder="Please enter the password again"
           onkeyup="this.value=this.value.replace(/[^\w]/g,'')"
-          maxlength="20"
+          maxlength="10"
         />
         <img
           :src="seen1 ? openeye : nopeneye"
