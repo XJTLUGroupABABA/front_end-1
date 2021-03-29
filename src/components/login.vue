@@ -1,27 +1,53 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
 
 <template>
-  <div id="login">
-    <h1>可爱的登录界面</h1>
+  <div class="container">
+    <div class="background"></div>
+    <div class="contain">
+      <a class="title"> GIFTER SYSTEM LOGIN </a>
+
+      <div class="form">
+        <input
+          type="text"
+          v-model.trim="name"
+          placeholder="Please enter your user name"
+          onKeyUp="value=value.replace(/[\W]/g,'')"
+          maxlength="20"
+        /><br />
+      </div>
+      <div class="passWord">
+        <input
+          :type="pwdType"
+          v-model.trim="password"
+          placeholder="Please enter your password"
+          onkeyup="this.value=this.value.replace(/[^\w]/g,'')"
+          maxlength="10"
+        />
+        <img
+          :src="seen ? openeye : nopeneye"
+          class="eye"
+          alt=""
+          @click="changeType()"
+        />
+      </div>
+
+      <button @click.prevent="handlefinish">LOGIN</button>
+    </div>
   </div>
 </template>
 
-<<<<<<< HEAD
 <style scoped>
 .container {
   height: 100%;
   width:100%;
 }
 .background {
+
   /* background: url("../assets/gift.jpg") no-repeat center;
   float: left;
   width: 100%;
   height: 900px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-filter: blur(5px) !important;
-  -moz-filter: blur(5px) !important;
-  -o-filter: blur(5px) !important;
+@ -54,13 +54,27 @@
   -ms-filter: blur(5px) !important;
   filter: blur(4px) !important;
   text-align: center;
@@ -105,12 +131,29 @@ img {
 }
 </style>
 
-=======
->>>>>>> 50b57e61a6e0f5f6bd85c41de926607a0a5e35b1
 <script>
 export default {
-  name: "login",
-  data: {},
-  methods: {},
+  name: "Register",
+  props: {
+    msg: String,
+  },
+  data() {
+    return {
+      name: "",
+      password: "",
+      passwordAgain: "",
+      phone: "",
+      seen: "",
+      seen1: "",
+      pwdType: "password", // 密码类型
+      pwdType1: "password", // 密码类型
+      openeye: require("../assets/eye.png"), //图片地址
+      nopeneye: require("../assets/eye2.png"), //图片地址
+    };
+  },
+
+  methods: {
+  }
+    
 };
 </script>
