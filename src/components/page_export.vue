@@ -19,26 +19,29 @@
       <div class="showHistory" v-for="(history, i) in user_history" :key="i"></div>
     </div>
     <div id="recommendation_today">
-      <h1 class="subtitle-2">Recommended Today</h1>
-      <div class="showRecommendation">
-        <v-card class="rc1">
-          <!-- <v-img :src="require('../assets/shiming.png')">
-          </v-img> -->
-          <span>1</span>
-        </v-card>
-        <v-card class="rc2">
-          <span>2</span>
-        </v-card>
-        <v-card class="rc3">
-          <span>3</span>
-        </v-card>
-        <v-card class="rc4">
-          <span>4</span>
-        </v-card>
-        <v-card class="rc5">
-          <span>5</span>
-        </v-card>
-      </div>
+      <li>
+        <h1 class="subtitle-2">Recommended Today</h1>
+        <h1 class="subtitle-4">Trends</h1>
+      </li>
+      <li>
+        <div class="showRecommendation">
+          <v-card class="rc1">
+            <!-- <v-img :src="require('../assets/shiming.png')">
+            </v-img> -->
+            <span>1</span>
+          </v-card>
+          <v-card class="rc2">
+            <span>2</span>
+          </v-card>
+          <v-card class="rc3">
+            <span>3</span>
+          </v-card>
+          <v-card class="rc4">
+            <span>4</span>
+          </v-card>
+        </div>
+        <trends_list class="showTrends"></trends_list>
+      </li>
     </div>
     <div id="list_of_good_things">
       <h1 class="subtitle-3">List of good things</h1>
@@ -61,10 +64,12 @@
 
 <script>
 import SearchBar from './SearchBar'
+import trends_list from "@/components/trends_list";
 export default {
   name: 'page_export',
   components: {
-    "searchBar": SearchBar
+    "searchBar": SearchBar,
+    "trends_list": trends_list
   },
   data () {
     return {
@@ -144,35 +149,37 @@ export default {
  padding-left: 100px;
 }
 .showRecommendation{
-  margin-left: auto;
-  margin-right: auto;
-  width: 1080px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 720px;
   height: 600px;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(3, 33.33%);
   grid-template-rows: repeat(2, 50%);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
 .rc1{
-  grid-row: 1/3;
-  grid-column: 1;
+  grid-row: 1/2;
+  grid-column: 1/3;
 }
 .rc2{
-  grid-row: 1;
-  grid-column: 2;
+  grid-row: 1/2;
+  grid-column: 3/4;
 }
 .rc3{
-  grid-row: 1;
-  grid-column: 3/5;
+  grid-row: 2/3;
+  grid-column: 1/2;
 }
 .rc4{
-  grid-row: 2;
+  grid-row: 2/3;
   grid-column: 2/4;
 }
-.rc5{
-  grid-row: 2;
-  grid-column: 4;
+.subtitle-4{
+  margin-left: 450px;
+}
+.showTrends{
+  margin-left: 84px;
 }
 .showArticles{
   margin-left: auto;
@@ -198,5 +205,8 @@ h2{
   font-size: 24px;
   color: black;
   text-align: center;
+}
+li{
+  display: flex;
 }
 </style>
