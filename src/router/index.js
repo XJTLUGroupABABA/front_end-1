@@ -8,6 +8,7 @@ import slideshow from '../components/slideshow.vue'
 import Search from '../components/Search.vue';
 import Register from '../components/Register.vue';
 import login from '../components/login.vue';
+import single_gift from '../components/single_gift.vue';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -53,6 +54,11 @@ const routes = [{
     path: '/login',
     name: 'login',
     component: login,
+  },
+  {
+    path: '/single_gift',
+    name: 'single_gift',
+    component: single_gift,
   },
 
 ]

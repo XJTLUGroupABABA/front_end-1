@@ -20,7 +20,7 @@
     </div>
     <div id="recommendation_today">
       <li>
-        <h1 class="subtitle-2">Recommended Today</h1>
+        <h1 class="subtitle-2" @click='toSingleGift'>Recommended Today</h1>
         <h1 class="subtitle-4">Trends</h1>
       </li>
       <li>
@@ -110,6 +110,9 @@ export default {
     }
   },
   methods:{
+    toSingleGift: function(){
+      this.$router.replace('/single_gift')
+    }
   }
 }
 </script>
