@@ -19,7 +19,7 @@
       <div class="showHistory" v-for="(history, i) in user_history" :key="i"></div>
     </div>
     <div id="recommendation_today">
-      <h1 class="subtitle-2">Recommended Today</h1>
+      <h1 class="subtitle-2" @click='toSingleGift'>Recommended Today</h1>
       <div class="showRecommendation">
         <v-card class="rc1">
           <!-- <v-img :src="require('../assets/shiming.png')">
@@ -105,6 +105,9 @@ export default {
     }
   },
   methods:{
+    toSingleGift: function(){
+      this.$router.replace('/single_gift')
+    }
   }
 }
 </script>
