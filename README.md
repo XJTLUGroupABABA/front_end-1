@@ -1,4 +1,4 @@
-# cpt_holly
+# CAN202 COURSEWORK
 
 ## Project setup
 ```
